@@ -48,14 +48,9 @@ class _ThirdscrnState extends State<Thirdscrn> {
           GestureDetector(
             onTap: () async {
               log(widget.notes.toString());
-                widget.notes.add(nameController.text);
-                log(widget.notes.toString());
-               await  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const HomeScreen();
-                }));
-              setState(() {
-                
-              });
+              widget.notes.add(nameController.text);
+              log(widget.notes.toString());
+              Navigator.pop(context);
             },
             child: Container(
               margin: const EdgeInsets.fromLTRB(5, 8, 5, 8),

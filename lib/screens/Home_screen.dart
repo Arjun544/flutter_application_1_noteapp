@@ -82,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Navigator.push(context,
               MaterialPageRoute(builder: (BuildContext context) {
             return Thirdscrn(notes: notes);
-          }));
+          })).then((value) => setState(() {}));
         },
       ),
     );

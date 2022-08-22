@@ -6,8 +6,6 @@ class Scndscrb extends StatefulWidget {
 
   const Scndscrb({super.key, required this.notes});
 
-  
-
   @override
   State<Scndscrb> createState() => _ScndscrbState();
 }
@@ -55,7 +53,7 @@ class _ScndscrbState extends State<Scndscrb> {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (BuildContext context) {
                     return Thirdscrn(notes: widget.notes);
-                  }));
+                  })).then((value) => setState(() {}));
                 },
                 icon: const Icon(
                   Icons.edit,
