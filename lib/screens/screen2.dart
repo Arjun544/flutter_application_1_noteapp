@@ -36,6 +36,7 @@ class _ScndscrbState extends State<Scndscrb> {
             ),
             onPressed: () {
               Navigator.pop(context);
+              setState(() {});
             },
           ),
         ),

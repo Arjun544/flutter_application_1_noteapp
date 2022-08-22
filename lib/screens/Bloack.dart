@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1_noteapp/screens/screen2.dart';
 
-class Bloack extends StatelessWidget {
+class Bloack extends StatefulWidget {
   final List notes;
-  
+
   final String name;
 
   const Bloack({super.key, required this.notes, required this.name});
 
- 
+  @override
+  State<Bloack> createState() => _BloackState();
+}
 
+class _BloackState extends State<Bloack> {
   // const Bloack({super.key, required this.name});
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -20,10 +22,10 @@ class Bloack extends StatelessWidget {
         onTap: () {
           Navigator.push(context,
               MaterialPageRoute(builder: (BuildContext context) {
-            return  Scndscrb(
-              notes: notes,
+            return Scndscrb(
+              notes: widget.notes,
             );
-          }));
+          })).then((value) => setState(() {}));
         },
         child: Container(
           padding: const EdgeInsets.fromLTRB(15, 10, 15, 10),
@@ -35,7 +37,7 @@ class Bloack extends StatelessWidget {
           height: 150,
           child: Center(
             child: Text(
-              name,
+              widget.name,
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 20,
